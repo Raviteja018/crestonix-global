@@ -56,7 +56,8 @@ export default function TermsAndConditions() {
     },
     {
       title: "Governing Law",
-      description: "This agreement is governed by the laws of Telangana, India.",
+      description:
+        "This agreement is governed by the laws of Telangana, India.",
     },
     {
       title: "Amendments",
@@ -84,24 +85,31 @@ export default function TermsAndConditions() {
     <div className="bg-black text-white min-h-screen">
       <Navbar />
 
-      <section className="max-w-5xl mx-auto px-6 md:px-20 py-20">
-        <h1 className="text-4xl font-bold text-orange-500 mb-6">
+      <section className="max-w-6xl mx-auto px-6 md:px-20 py-20">
+        <h1 className="text-4xl font-bold text-orange-500 mb-6 border-l-4 border-orange-500 pl-4">
           Terms & Conditions
         </h1>
-        <p className="text-gray-400 mb-8">
-          Please read these Terms and Conditions ("Agreement") carefully before using services provided by Priacc Innovations.
+        <p className="text-gray-400 mb-10 text-md md:text-lg leading-relaxed">
+          These Terms and Conditions outline the legal agreement between you and Priacc Innovations regarding the use of our services and software.
         </p>
 
-        {terms.map((item, index) => (
-          <div key={index} className="mb-6">
-            <h2 className="text-xl font-semibold text-white mb-2">
-              {index + 1}. {item.title}
-            </h2>
-            <p className="text-gray-400 leading-relaxed">{item.description}</p>
-          </div>
-        ))}
+        <div className="space-y-8">
+          {terms.map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#111111] rounded-xl shadow-md px-6 py-6 border border-gray-800 hover:shadow-orange-500/20 transition duration-300"
+            >
+              <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">
+                {index + 1}. {item.title}
+              </h2>
+              <p className="text-gray-400 text-md md:text-lg leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
 
-        <p className="text-sm text-gray-500 mt-12">
+        <p className="text-xs text-gray-500 mt-12 text-center">
           Last Updated: {new Date().toLocaleDateString()}
         </p>
       </section>
